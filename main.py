@@ -2,9 +2,9 @@ from random import *
 import sys
 
 def choose_user():
-    player = input("🪨  (pierre)\n📄 (papier)\n✂️  (ciseaux) \n\nVotre choix : ")
+    player = None
     while player not in ["pierre","papier","ciseaux"]:
-        player = input("🪨  (pierre)\n📄 (papier)\n✂️  (ciseaux) \n\nVotre choix : ")
+        player = input("🪨  (pierre)\n📄 (papier)\n✂️  (ciseaux) \n\nVotre choix : ").replace(" ","").lower()
     return(player)
 
 def choose_computer():
