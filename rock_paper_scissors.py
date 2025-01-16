@@ -32,5 +32,5 @@ def play_game(u, c):
         sys.stdout.write(colors.get('blue') + "Egalite." + reset + "\n")
 
 
-print("By 0xtheghost")
+print("By 0xchatblanc")
 play_game(choose_user(), choose_computer())
