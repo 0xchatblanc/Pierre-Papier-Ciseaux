@@ -3,33 +3,33 @@ import sys
 
 def choose_user():
     player = None
-    while player not in ["pierre","papier","ciseaux"]:
-        player = input("🪨  (pierre)\n📄 (papier)\n✂️  (ciseaux) \n\nVotre choix : ").replace(" ","").lower()
-    return(player)
+    while player not in ["rock", "paper", "scissors"]:
+        player = input("🪨 (rock)\n📄 (paper)\n✂️ (scissors) \n\nYour choice: ").replace(" ", "").lower()
+    return player
 
 def choose_computer():
-    n = randint(1,3)
+    n = randint(1, 3)
     if n == 1:
-        comp = "pierre"
+        comp = "rock"
     elif n == 2:
-        comp = "papier"
+        comp = "paper"
     else:
-        comp = "ciseaux"
+        comp = "scissors"
     return comp
 
-def play_game(u, c):
+def play_game(user, computer):
     colors = {'red': '\x1b[31m', 'green': '\x1b[32m', 'yellow': '\x1b[33m', 'blue': '\x1b[34m'}
     reset = '\x1b[0m'
-    sys.stdout.write(colors.get('yellow') + "\n==========| RESULTAT |==========\n" + reset + "\n")
-    if (u == "pierre" and c == "ciseaux") or (u == "papier" and c == "pierre") or (u == "ciseaux" and c == "papier"):
-        print(f"Choix Ordianteur : {c}\nChoix Joueur : {u}\n")
-        sys.stdout.write(colors.get('green') + "Vous avez gagne." + reset + "\n")
-    elif (u == "pierre" and c == "papier") or (u == "papier" and c == "ciseaux") or (u == "ciseaux" and c == "pierre"):
-        print(f"Choix Ordianteur : {c}\nChoix Joueur : {u}\n")
-        sys.stdout.write(colors.get('red') + "Vous avez perdu." + reset + "\n")
-    elif u==c:
-        print(f"Choix Ordianteur : {c}\nChoix Joueur : {u}\n")
-        sys.stdout.write(colors.get('blue') + "Egalite." + reset + "\n")
+    sys.stdout.write(colors.get('yellow') + "\n==========| RESULT |==========\n" + reset + "\n")
+    if (user == "rock" and computer == "scissors") or (user == "paper" and computer == "rock") or (user == "scissors" and computer == "paper"):
+        print(f"Computer's choice: {computer}\nYour choice: {user}\n")
+        sys.stdout.write(colors.get('green') + "You won!" + reset + "\n")
+    elif (user == "rock" and computer == "paper") or (user == "paper" and computer == "scissors") or (user == "scissors" and computer == "rock"):
+        print(f"Computer's choice: {computer}\nYour choice: {user}\n")
+        sys.stdout.write(colors.get('red') + "You lost." + reset + "\n")
+    elif user == computer:
+        print(f"Computer's choice: {computer}\nYour choice: {user}\n")
+        sys.stdout.write(colors.get('blue') + "It's a tie." + reset + "\n")
 
 
 print("By 0xchatblanc")
